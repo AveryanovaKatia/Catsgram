@@ -1,6 +1,5 @@
 package ru.yandex.practicum.catsgram.service;
 
-import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;

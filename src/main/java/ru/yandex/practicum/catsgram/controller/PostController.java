@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.*;
 import ru.yandex.practicum.catsgram.model.Post;
 import ru.yandex.practicum.catsgram.model.SortOrder;
 import ru.yandex.practicum.catsgram.service.PostService;
-
 import java.util.List;
 import java.util.Optional;
 

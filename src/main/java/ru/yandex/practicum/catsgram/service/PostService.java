@@ -66,7 +66,7 @@ public class PostService {
         }
         if (posts.containsKey(newPost.getId())) {
             Post oldPost = posts.get(newPost.getId());
-            if (Objects.isNull(newPost.getDescription())|| newPost.getDescription().isBlank()) {
+            if (Objects.isNull(newPost.getDescription()) || newPost.getDescription().isBlank()) {
                 throw new ConditionsNotMetException("Описание не может быть пустым");
             }
             oldPost.setDescription(newPost.getDescription());

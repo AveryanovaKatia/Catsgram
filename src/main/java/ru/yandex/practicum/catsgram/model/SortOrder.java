@@ -5,14 +5,10 @@ public enum SortOrder {
 
     // Преобразует строку в элемент перечисления
     public static SortOrder from(String order) {
-        switch (order.toLowerCase()) {
-            case "ascending":
-            case "asc":
-                return ASCENDING; // по возрастанию
-            case "descending":
-            case "desc":
-                return DESCENDING; //по убыванию
-            default: return null;
-        }
+        return switch (order.toLowerCase()) {
+            case "ascending", "asc" -> ASCENDING; // по возрастанию
+            case "descending", "desc" -> DESCENDING; //по убыванию
+            default -> null;
+        };
     }
 }
