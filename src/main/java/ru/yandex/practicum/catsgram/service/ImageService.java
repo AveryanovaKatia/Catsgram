@@ -1,7 +1,6 @@
 package ru.yandex.practicum.catsgram.service;
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 import org.springframework.web.multipart.MultipartFile;
@@ -26,8 +25,6 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 public class ImageService {
     private final Map<Long, Image> images = new HashMap<>();
-    @Value("${image-directory}")
-    private final String imageDirectory;
     private final PostService postService;
 
     // получение данных об изображениях указанного поста
@@ -46,6 +43,7 @@ public class ImageService {
                     StringUtils.getFilenameExtension(file.getOriginalFilename()));
 
             // формирование пути для сохранения файла с учётом идентификаторов автора и поста
+            String imageDirectory = "/Users/europe/IdeaProjects/Catsgram";
             Path uploadPath = Paths.get(imageDirectory, String.valueOf(post.getAuthorId()), post.getId().toString());
             Path filePath = uploadPath.resolve(uniqueFileName);
 

@@ -29,8 +29,8 @@ public class PostController {
     }
 
     @GetMapping("/post/{postId}")
-    public Optional<Post> findById(@PathVariable long postId) {
-        return postService.findById(postId);
+    public Optional<Post> findById(@PathVariable("postId") long id) {
+        return postService.findById(id);
     }
 
     @PostMapping
